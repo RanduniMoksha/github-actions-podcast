@@ -1,0 +1,19 @@
+name: Generate Podcast Feed
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Run Feed Generator
+        uses: RanduniMoksha/podcast-generator@main
+        with:
+          email: YOUR_EMAIL
